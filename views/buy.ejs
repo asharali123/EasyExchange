@@ -1,0 +1,233 @@
+<%- include("./common/header.ejs") %>
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <!-- <h2>Inner Page</h2>
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li>Inner Page</li>
+          </ol> -->
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <section class="inner-page">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 mb-5 pt-4">
+
+            <div class="card">
+              <div class="card-body">
+                <!-- Default Tabs -->
+                <ul class="nav nav-tabs d-flex" id="myTabjustified" role="tablist">
+                  <li class="nav-item flex-fill" role="presentation">
+                    <button class="nav-link w-100 active" id="easypaise" data-bs-toggle="tab"
+                      data-bs-target="#easypaise-justified" type="button" role="tab" aria-controls="home"
+                      aria-selected="true">EasyPaise</button>
+                  </li>
+                  <li class="nav-item flex-fill" role="presentation">
+                    <button class="nav-link w-100" id="jazzcash-tab" data-bs-toggle="tab"
+                      data-bs-target="#jazzcash-justified" type="button" role="tab" aria-controls="profile"
+                      aria-selected="false">Jazzcash</button>
+                  </li>
+                  <li class="nav-item flex-fill" role="presentation">
+                    <button class="nav-link w-100" id="naypay-tab" data-bs-toggle="tab"
+                      data-bs-target="#naypay-justified" type="button" role="tab" aria-controls="contact"
+                      aria-selected="false">Naypay</button>
+                  </li>
+                  <!-- <li class="nav-item flex-fill" role="presentation">
+                    <button class="nav-link w-100" id="metamask-tab" data-bs-toggle="tab"
+                      data-bs-target="#metamask-justified" type="button" role="tab" aria-controls="contact"
+                      aria-selected="false">Metamask</button>
+                  </li> -->
+                </ul>
+                <div class="tab-content pt-2" id="myTabjustifiedContent">
+                  <div class="tab-pane fade show active" id="easypaise-justified" role="tabpanel"
+                    aria-labelledby="home-tab">
+                    <div class="card" style="padding:22px;">
+                      <div class="card-body">
+                        <h5 class="card-title">EasyPaise</h5>
+                        <br>
+                        <form class="row g-3" method="post">
+                          <div class="col-12">
+                            <label for="name" class="form-label">Your Name</label>
+                            <input type="text" name="name" class="form-control" id="name" required>
+                          </div>
+                          <div class="col-12">
+                            <label for="account-title" class="form-label">Your EasyPaise Account Title</label>
+                            <input type="text" name="accountTitle" class="form-control" id="easypaise-account-title"
+                              required>
+                          </div>
+                          <div class="col-12">
+                            <label for="account-number" class="form-label">Your Easypaise Account
+                              Number</label>
+                            <input type="text" name="accountNumber" class="form-control" id="inputPassword4" required>
+                          </div>
+                          <div class="col-12">
+                            <label for="your" class="form-label">Your Order</label>
+                            <div class="row input-group">
+                              <div class="col-md-2 mb-3">
+                                <select id="inputState" class="form-select" name="currency" required>
+                                  <% for (const currency in data.currency) { %>
+                                    <option value="<%= currency %>">
+                                      <%= currency %> - <%= data.currency[currency] %>
+                                    </option>
+                                    <% } %>
+                                </select>
+                              </div>
+                              <div class="col-md-10">
+                                <input type="text" class="form-control" placeholder="Amount" name="amount" required>
+                              </div>
+                              <input type="text" name="paymentMethod" value="easypaise" hidden>
+                            </div>
+                            <div class="mb-3">
+                              <div class="alert alert-primary fade show" role="alert">
+                                <p>
+                                  Please send easypaise recipient on this number "0313-0464469"<br />
+                                  As soon as we confirm your payment we transfer you order,
+                                  Please be patience on delay
+                                </p>
+                                <p><small>Note: Amount is always be in PKR</small></p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="text-left">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="jazzcash-justified" role="tabpanel" aria-labelledby="profile-tab">
+                    <div class="card" style="padding:22px;">
+                      <div class="card-body">
+                        <h5 class="card-title">Jazzcash</h5>
+                        <br>
+                        <form class="row g-3" method="post">
+                          <div class="col-12">
+                            <label for="name" class="form-label">Your Name</label>
+                            <input type="text" name="name" class="form-control" id="name" required>
+                          </div>
+                          <div class="col-12">
+                            <label for="account-title" class="form-label">Your Jazzcash Account Title</label>
+                            <input type="text" name="accountTitle" class="form-control" id="easypaise-account-title"
+                              required>
+                          </div>
+                          <div class="col-12">
+                            <label for="account-number" class="form-label">Your Jazzcash Account
+                              Number</label>
+                            <input type="text" name="accountNumber" class="form-control" id="inputPassword4" required>
+                          </div>
+                          <div class="col-12">
+                            <label for="your" class="form-label">Your Order</label>
+                            <div class="row input-group">
+                              <div class="col-md-2 mb-3">
+                                <select id="inputState" class="form-select" name="currency" required>
+                                  <% for (const currency in data.currency) { %>
+                                    <option value="<%= currency %>">
+                                      <%= currency %> - <%= data.currency[currency] %>
+                                    </option>
+                                    <% } %>
+                                </select>
+                              </div>
+                              <div class="col-md-10">
+                                <input type="text" class="form-control" placeholder="Amount" name="amount" required>
+                              </div>
+                              <input type="text" name="paymentMethod" value="jazzcash" hidden>
+                            </div>
+                            <div class="mb-3">
+                              <div class="alert alert-primary fade show" role="alert">
+                                <p>
+                                  Please send jazzcash recipient on this number "0313-0464469"<br />
+                                  As soon as we confirm your payment we transfer you order,
+                                  Please be patience on delay
+                                </p>
+                                <p><small>Note: Amount is always be in PKR</small></p>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="text-left">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="naypay-justified" role="tabpanel" aria-labelledby="contact-tab">
+                    <div class="card" style="padding:22px;">
+                      <div class="card-body">
+                        <h5 class="card-title">Jazzcash</h5>
+                        <br>
+                        <form class="row g-3" method="post">
+                          <div class="col-12">
+                            <label for="name" class="form-label">Your Name</label>
+                            <input type="text" name="name" class="form-control" id="name" required>
+                          </div>
+                          <div class="col-12">
+                            <label for="account-title" class="form-label">Your Naypay Account Title</label>
+                            <input type="text" name="accountTitle" class="form-control" id="easypaise-account-title"
+                              required>
+                          </div>
+                          <div class="col-12">
+                            <label for="account-number" class="form-label">Your Naypay Account
+                              Number</label>
+                            <input type="text" name="accountNumber" class="form-control" id="inputPassword4" required>
+                          </div>
+                          <div class="col-12">
+                            <label for="your" class="form-label">Your Order</label>
+                            <div class="row input-group">
+                              <div class="col-md-2 mb-3">
+                                <select id="inputState" class="form-select" name="currency" required>
+                                  <% for (const currency in data.currency) { %>
+                                    <option value="<%= currency %>">
+                                      <%= currency %> - <%= data.currency[currency] %>
+                                    </option>
+                                    <% } %>
+                                </select>
+                              </div>
+                              <div class="col-md-10">
+                                <input type="text" class="form-control" placeholder="Amount" name="amount" required>
+                              </div>
+                              <input type="text" name="paymentMethod" value="naypay" hidden>
+                            </div>
+                            <div class="mb-3">
+                              <div class="alert alert-primary fade show" role="alert">
+                                <p>
+                                  Please send naypay recipient on this number "0313-0464469"<br />
+                                  As soon as we confirm your payment we transfer you order,
+                                  Please be patience on delay
+                                </p>
+                                <p><small>Note: Amount is always be in PKR</small></p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="text-left">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- <div class="tab-pane fade" id="metamask-justified" role="tabpanel" aria-labelledby="contact-tab">
+                    Saepe animi et soluta ad odit soluta sunt. Nihil quos omnis animi debitis cumque. Accusantium
+                    quibusdam
+                    perspiciatis qui qui omnis magnam. Officiis accusamus impedit molestias nostrum veniam. Qui amet
+                    ipsum iure.
+                    Dignissimos fuga tempore dolor.
+                  </div>
+                </div>End Default Tabs -->
+
+                </div>
+              </div>
+            </div>
+          </div>
+    </section>
+
+  </main><!-- End #main -->
+  <%- include("./common/footer.ejs") %>

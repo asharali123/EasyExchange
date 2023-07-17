@@ -1,0 +1,388 @@
+<%- include("./common/header.ejs") %>
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+      <div class="row justify-content-center">
+        <div class="col-xl-7 col-lg-9 text-center">
+          <h1>EasyExchange</h1>
+          <h2>Your Trusted Online Cryptocurrency Exchange Platform</h2>
+        </div>
+      </div>
+      <!-- <div class="text-center">
+        <a href="#about" class="btn-get-started scrollto">Get Started</a>
+      </div> -->
+
+      <div class="row icon-boxes">
+        <div class="col-md-12 col-lg-12 align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="200">
+          <div class="icon-box">
+            <h2 class="text-center"> Calculations </h2>
+            <br><br>
+            <form method="post" class="row g-3">
+              <div class="col-md-6">
+                <input type="text" name="amount" class="form-control" placeholder="Amount" required>
+              </div>
+              <div class="col-md-6">
+                <select id="inputState" class="form-select" name="currency">
+                  <% for (const currency in data.currency) { %>
+                    <option value="<%= currency %>">
+                      <%= currency %> - <%= data.currency[currency] %>
+                    </option>
+                    <% } %>
+                </select>
+
+              </div>
+              <% if(data.result) { %>
+                <div class="col-md-12">
+                  <!-- <input type="text" class="form-control" value="<%= data.result %>" disabled> -->
+                  <div class="alert alert-success bg-success fade show" style="color:white" role="alert">
+                    <p>
+                      Form: <%= "USDT" %>
+                        <br />
+                        To: <%= data.chooseCurrency %>
+                          <br />
+                          Amount: <%= data.convertAmount %>
+                            <br />
+                            Converter Amount: <%= data.result %>
+                    </p>
+                    <p><small>Note: Amount is always be in USDT</small></p>
+                  </div>
+                </div>
+                <% } %>
+                  <div class=" text-center">
+                    <input type="submit" class="btn btn-primary" value="Convert">
+                  </div>
+            </form>
+          </div>
+        </div>
+      </div>
+  </section><!-- End Hero -->
+
+
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>About Us</h2>
+          <p>Your Trusted Online Cryptocurrency Exchange Platform.</p>
+        </div>
+
+        <div class="row content">
+          <div class="col-lg-6">
+            <p>
+              Welcome to EasyExchange, your premier destination for hassle-free and secure online Cryptocurrency
+              exchange. At
+              EasyExchange, we
+              understand the importance of efficient and reliable currency conversion, whether you're traveling abroad,
+              sending Cryptocurrency
+              to loved ones, or engaging in international business transactions.
+            </p>
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0">
+            <p>
+              With our user-friendly platform and robust security measures, we aim to make the process of exchanging
+              currencies as
+              smooth as possible. Our team of dedicated professionals works tirelessly to ensure that your transactions
+              are handled
+              with utmost care and accuracy. You can trust us to provide competitive exchange rates, enabling you to get
+              the most
+              value for your Cryptocurrency.
+            </p>
+            <a href="/about" class="btn-learn-more">Learn More</a>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+
+    <!-- ======= About Video Section ======= -->
+    <section id="about-video" class="about-video">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+
+          <div class="col-lg-6 video-box align-self-baseline" data-aos="fade-right" data-aos-delay="100">
+            <img src="assets/img/about-video.png" class="img-fluid" alt="">
+            <a href="assets/img/intro.mp4" class="glightbox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
+          </div>
+
+          <div class="col-lg-6 pt-3 pt-lg-0 content" data-aos="fade-left" data-aos-delay="100">
+            <h3>What sets us apart is our commitment to transparency and customer satisfaction</h3>
+            <p class="fst-italic">
+              We believe in building long-lasting relationships with our clients, and we strive to exceed their
+              expectations at every
+              step. Whether you're a frequent traveler, an expatriate, or a business owner, EasyExchange caters to all
+              your currency
+              exchange needs, offering a wide range of services tailored to your requirements.
+            </p>
+            <ul>
+              <li><i class="bx bx-check-double"></i> Hassle-free and secure online Cryptocurrency exchange.</li>
+              <li><i class="bx bx-check-double"></i> Competitive exchange rates for maximum value.</li>
+              <li><i class="bx bx-check-double"></i> Commitment to transparency and customer satisfaction.</li>
+              <li><i class="bx bx-check-double"></i> State-of-the-art security measures to protect personal and
+                financial information.</li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End About Video Section -->
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Testimonials</h2>
+        </div>
+
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  EasyExchange has been a game-changer for my travel experiences. As a frequent traveler, I've always
+                  struggled with
+                  finding reliable currency exchange services. But since I started using EasyExchange, I no longer have
+                  to worry about
+                  hidden fees or unfavorable rates. Their platform is intuitive, and the rates are always competitive. I
+                  highly recommend
+                  EasyExchange to anyone looking for a hassle-free and trustworthy Cryptocurrency exchange service
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <!-- <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt=""> -->
+                <h3>Saul Goodman</h3>
+                <!-- <h4>Ceo &amp; Founder</h4> -->
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  I have been living abroad for several years, and EasyExchange has become my go-to platform for all my
+                  currency
+                  conversion needs. Their website is easy to navigate, and I appreciate the transparency they offer with
+                  their rates and
+                  fees. What sets EasyExchange apart is their exceptional customer service. Whenever I've had a question
+                  or needed
+                  assistance, their support team has been prompt, knowledgeable, and friendly. It's a relief to know
+                  that I can rely on
+                  EasyExchange for my financial transactions.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <!-- <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt=""> -->
+                <h3>Sara Wilsson</h3>
+                <!-- <h4>Designer</h4> -->
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  As a small business owner conducting international transactions, I needed a reliable and efficient
+                  Cryptocurrency exchange
+                  solution. EasyExchange has been an absolute lifesaver. Their platform is straightforward to use, and I
+                  can easily
+                  convert currencies at competitive rates. The peace of mind I get from their secure transactions and
+                  attentive customer
+                  support is invaluable. EasyExchange has streamlined my business operations and saved me both time and
+                  Cryptocurrency. I highly
+                  recommend them to any fellow entrepreneurs
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <!-- <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt=""> -->
+                <h3>Jena Karlis</h3>
+                <!-- <h4>Store Owner</h4> -->
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  I recently used EasyExchange to send Cryptocurrency to a family member in another country, and I
+                  couldn't be
+                  happier with the
+                  experience. The entire process was smooth and secure. EasyExchange provided a competitive exchange
+                  rate, and the
+                  transaction was completed within minutes. The recipient received the Cryptocurrency without any
+                  issues.
+                  EasyExchange has become
+                  my preferred choice for Cryptocurrency transfers, and I confidently recommend them to anyone in need
+                  of a
+                  reliable and efficient
+                  Cryptocurrency exchange service.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <!-- <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt=""> -->
+                <h3>Matt Brandon</h3>
+                <!-- <h4>Freelancer</h4> -->
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  EasyExchange has made my currency exchange worries a thing of the past. Their platform is
+                  user-friendly, and I
+                  appreciate the transparency they offer with their rates. I've compared their rates with other
+                  providers, and
+                  EasyExchange consistently comes out on top. The convenience of their mobile app is a bonus, allowing
+                  me to exchange
+                  Cryptocurrency on the go. Whether I'm traveling or making international purchases, EasyExchange is my
+                  trusted
+                  companion. I can't
+                  recommend them enough.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <!-- <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt=""> -->
+                <h3>John Larson</h3>
+                <!-- <h4>Entrepreneur</h4> -->
+              </div>
+            </div><!-- End testimonial item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section><!-- End Testimonials Section -->
+
+    <!-- ======= Frequently Asked Questions Section ======= -->
+    <section id="faq" class="faq section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Frequently Asked Questions</h2>
+        </div>
+
+        <div class="faq-list">
+          <ul>
+            <li data-aos="fade-up">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse"
+                data-bs-target="#faq-list-1">How does EasyExchange work? <i class="bx bx-chevron-down icon-show"></i><i
+                  class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
+                <p>
+                  EasyExchange is an online Cryptocurrency exchange platform that allows you to convert one currency to
+                  another.
+                  Simply select the
+                  currencies you want to exchange, enter the amount, and our platform will provide you with the current
+                  exchange rate.
+                  Follow the instructions to complete the transaction securely and conveniently.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="100">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2"
+                class="collapsed">Is EasyExchange a reliable and secure platform? <i
+                  class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  Yes, at EasyExchange, we prioritize the security and reliability of our platform. We utilize advanced
+                  encryption and
+                  data protection measures to ensure the safety of your personal and financial information. Our platform
+                  adheres to the
+                  highest industry standards, giving you peace of mind when exchanging Cryptocurrency with us.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="200">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3"
+                class="collapsed">Are there any fees for using EasyExchange? <i
+                  class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  EasyExchange strives to provide transparent and competitive rates. While we may apply a small fee for
+                  our services, it
+                  will be clearly displayed during the transaction process. We believe in maintaining transparency,
+                  ensuring that you have
+                  a clear understanding of the costs involved before finalizing the exchange
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="300">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4"
+                class="collapsed">How long does it take to complete a Cryptocurrency exchange transaction? <i
+                  class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  The time taken to complete a transaction depends on various factors, such as the currencies involved
+                  and the payment
+                  method chosen. In general, most transactions are processed within a few minutes. However, certain
+                  factors like bank
+                  processing times or additional verification requirements may affect the overall duration. Rest
+                  assured, we strive to
+                  make the process as quick and efficient as possible.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="400">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5"
+                class="collapsed">Can I cancel or modify a Cryptocurrency exchange transaction? <i
+                  class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  Once a Cryptocurrency exchange transaction is initiated, it is usually processed immediately to
+                  provide you
+                  with the best
+                  available rates. Due to the nature of currency markets and the speed of processing, cancellation or
+                  modification of
+                  transactions may not be possible. We recommend reviewing all details carefully before confirming the
+                  transaction to
+                  ensure accuracy.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="400">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5"
+                class="collapsed">What if I encounter an issue during the Cryptocurrency exchange process? <i
+                  class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  If you encounter any issues during the Cryptocurrency exchange process or have any questions, our
+                  dedicated
+                  customer support team
+                  is available 24/7 to assist you. You can reach out to us via our contact page, email, or phone, and
+                  our team will
+                  promptly address your concerns and provide the necessary guidance.
+
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="400">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5"
+                class="collapsed">Is my personal information safe with EasyExchange? <i
+                  class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  Absolutely. At EasyExchange, we prioritize the security and confidentiality of your personal
+                  information. We employ
+                  robust security measures and follow strict privacy policies to ensure that your data is protected. We
+                  do not share your
+                  information with anyone
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section><!-- End Frequently Asked Questions Section -->
+  </main>
+  <%- include("./common/footer.ejs") %>
